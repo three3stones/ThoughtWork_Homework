@@ -1,0 +1,31 @@
+use save;
+create table if not exists student(
+    id VARCHAR(50),
+    name VARCHAR(20),
+    age VARCHAR(20),
+    sex VARCHAR(10)
+);
+INSERT INTO `save`.`student` (`id`, `name`, `age`, `sex`) VALUES ('001', '张三', '18', '男');
+INSERT INTO `save`.`student` (`id`, `name`, `age`, `sex`) VALUES ('002', '李四', '20', '女');
+
+
+create table if not exists subject(
+    id VARCHAR(50),
+    subject VARCHAR(20),
+    teacher VARCHAR(20),
+    description VARCHAR(1000)
+);
+INSERT INTO `save`.`subject` (`id`, `subject`, `teacher`, `description`) VALUES ('1001', '语文', '王老师', '本次考试比较简单');
+INSERT INTO `save`.`subject` (`id`, `subject`, `teacher`, `description`) VALUES ('1002', '数学', '刘老师', '本次考试比较难');
+
+
+create table if not exists score(
+    id VARCHAR(10),
+    student_id VARCHAR(20),
+    subject_id VARCHAR(20),
+    score FLOAT
+);
+INSERT INTO `save`.`score` (`id`, `student_id`, `subject_id`, `score`) VALUES ('1', '001', '1001', '80');
+INSERT INTO `save`.`score` (`id`, `student_id`, `subject_id`, `score`) VALUES ('2', '002', '1001', '75');
+INSERT INTO `save`.`score` (`id`, `student_id`, `subject_id`, `score`) VALUES ('3', '001', '1002', '70');
+INSERT INTO `save`.`score` (`id`, `student_id`, `subject_id`, `score`) VALUES ('4', '002', '1002', '60.5');
